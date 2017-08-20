@@ -1774,6 +1774,7 @@ EXIT:
     List_Destroy(&pHashMap->NodePtrList);
     
     pHashMap->ItemCount = 0;
+    pHashMap->TotalNodeCount = 0;
     pHashMap->PrimeNumberArray = NULL;
     pHashMap->PrimeNumberArrayLength = 0;
     pHashMap->KeySizeInBytes = 0;
@@ -1871,9 +1872,6 @@ BOOL HashMap_Iterator_Destroy(IN PHASH_MAP_ITERATOR pIterator)
     return TRUE;
 }
 
-//
-// through preorder traversal
-//
 BOOL HashMap_Iterator_GetNext(IN PHASH_MAP_ITERATOR pIterator, OUT void* pKey, OUT void* pValue)
 {
     PHASH_MAP_NODE pNode = NULL;
@@ -1985,9 +1983,6 @@ BOOL HashMap_Iterator_GetNext(IN PHASH_MAP_ITERATOR pIterator, OUT void* pKey, O
     }
 }
 
-//
-// through preorder traversal
-//
 BOOL HashMap_Iterator_GetNextPtr(IN PHASH_MAP_ITERATOR pIterator, OUT void** pKeyPtr, OUT void** pValuePtr)
 {
     PHASH_MAP_NODE pNode = NULL;
