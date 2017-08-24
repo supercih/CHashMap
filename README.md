@@ -1,2 +1,2 @@
 # CHashMap
-An implement of HashMap in C
+Aa generic implementing of HashMap in C. Key and Value can be any type.
